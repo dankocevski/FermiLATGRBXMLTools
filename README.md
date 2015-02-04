@@ -53,7 +53,7 @@ Plot a histogram of the significance of the LAT detections (TS)
 >plt.hist(logTS, bins=15								
 >plt.xlabel('log TS') 									
 >plt.ylabel('Number') 									
-
+>plt.show()
 
 Plotting the sky distribution of Fermi-LAT detected GRBs
 >import numpy as np 									
@@ -71,3 +71,4 @@ Plotting the sky distribution of Fermi-LAT detected GRBs
 >x[ind] -= 360 									
 >x=-x 											
 >ax.scatter(np.radians(x),np.radians(Dec)) 						
+>plt.show()
