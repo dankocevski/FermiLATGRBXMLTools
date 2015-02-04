@@ -55,7 +55,7 @@ Plot a histogram of the significance of the LAT detections (TS)
 >plt.ylabel('Number') 									
 
 
-# Plotting the sky distribution of Fermi-LAT detected GRBs
+Plotting the sky distribution of Fermi-LAT detected GRBs
 >import numpy as np 									
 >import matplotlib.pyplot as plt 						
 >import FermiLATGRBXMLTools 							
