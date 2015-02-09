@@ -7,68 +7,68 @@ This module contains a collection of methods to manipulate the public Fermi-LAT 
 Usage Examples: 
 
 import the module in ipython
->import FermiLATGRBXMLTools
+    import FermiLATGRBXMLTools
 
 Read in the xml file
->xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
+    xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
 
 Convert the xml file into a space-delimited text file
->xml.xml2txt()
+    xml.xml2txt()
 
 Return data for all GRBs in a single dictionary of numpy arrays
->Data = xml.ExtractData()
+    Data = xml.ExtractData()
 
 List all available data for all Fermi-LAT detected GRBs
->Data = xml.ExtractData()
->Data.keys()
+    Data = xml.ExtractData()
+    Data.keys()
 
 List the names of all Fermi-LAT detected GRBs
->Data = xml.ExtractData()
->Data['GRBNAME']
+    Data = xml.ExtractData()
+    Data['GRBNAME']
 
 List the best available position of all Fermi-LAT detected GRBs
->Data = xml.ExtractData()
->RA = Data['RA']
->DEC = Data['DEC']
+    Data = xml.ExtractData()
+    RA = Data['RA']
+    DEC = Data['DEC']
 
 Return data for all GRBs in a single dictionary of individual GRB objects
->GRBs = xml.ExtractGRBs()
+    GRBs = xml.ExtractGRBs()
 
 Extract the location of an individial GRB
->GRBs = xml.ExtractGRBs();
->GRB = GRBs['130427324'];
->print GRB.RA, GRB.DEC;
+    GRBs = xml.ExtractGRBs()
+    GRB = GRBs['130427324']
+    print GRB.RA, GRB.DEC
 
 
 Additional Examples:
 
 Plot a histogram of the significance of the LAT detections (TS)
->import matplotlib.pyplot as plt
->import FermiLATGRBXMLTools
->xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
->Data = xml.ExtractData()								
->TS = Data['TS'] 									
->logTS = np.log10(TS) 									
->logTS = logTS[np.isfinite(logTS)] 						
->plt.hist(logTS, bins=15								
->plt.xlabel('log TS') 									
->plt.ylabel('Number') 									
->plt.show()
+    import matplotlib.pyplot as plt
+    import FermiLATGRBXMLTools
+    xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
+    Data = xml.ExtractData()                               
+    TS = Data['TS']                                    
+    logTS = np.log10(TS)                                   
+    logTS = logTS[np.isfinite(logTS)]                      
+    plt.hist(logTS, bins=15                                
+    plt.xlabel('log TS')                                   
+    plt.ylabel('Number')                                   
+    plt.show()
 
 Plotting the sky distribution of Fermi-LAT detected GRBs
->import numpy as np 									
->import matplotlib.pyplot as plt 						
->import FermiLATGRBXMLTools 							
->xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
->Data = xml.ExtractData()								
->RA = Data['RA']										
->Dec = Data['Dec']	 								
->fig = plt.figure(figsize=(10, 5)) 							
->ax = fig.add_subplot(111, projection="mollweide", axisbg ='white')	 		
->ax.grid(True) 										
->x = np.remainder(RA+360,360) 							
->ind = x>180 									
->x[ind] -= 360 									
->x=-x 											
->ax.scatter(np.radians(x),np.radians(Dec)) 						
->plt.show()
+    import numpy as np                                     
+    import matplotlib.pyplot as plt                        
+    import FermiLATGRBXMLTools                             
+    xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
+    Data = xml.ExtractData()                               
+    RA = Data['RA']                                        
+    Dec = Data['Dec']                                  
+    fig = plt.figure(figsize=(10, 5))                          
+    ax = fig.add_subplot(111, projection="mollweide", axisbg ='white')         
+    ax.grid(True)                                      
+    x = np.remainder(RA+360,360)                           
+    ind = x>180                                    
+    x[ind] -= 360                                  
+    x=-x                                           
+    ax.scatter(np.radians(x),np.radians(Dec))                      
+    plt.show()
