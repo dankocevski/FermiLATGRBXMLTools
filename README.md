@@ -1,6 +1,6 @@
 # FermiLATGRBXMLTools
 
-This module contains a collection of methods to manipulate the public Fermi-LAT xml file
+This module contains a collection of methods to manipulate the xml file containing the list of Fermi-LAT detected GRBs.
 
 Usage Examples: 
 
