@@ -43,6 +43,7 @@ Extract the location of an individial GRB
 Additional Examples:
 
 Plot a histogram of the significance of the LAT detections (TS)
+```python
     import matplotlib.pyplot as plt
     import FermiLATGRBXMLTools
     xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
@@ -54,6 +55,7 @@ Plot a histogram of the significance of the LAT detections (TS)
     plt.xlabel('log TS')                                   
     plt.ylabel('Number')                                   
     plt.show()
+```
 
 Plotting the sky distribution of Fermi-LAT detected GRBs
     import numpy as np                                     
