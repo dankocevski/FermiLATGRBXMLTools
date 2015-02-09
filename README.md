@@ -1,6 +1,4 @@
 # FermiLATGRBXMLTools
-A python module to manipulate the Fermi-LAT GRB xml file
-
 
 This module contains a collection of methods to manipulate the public Fermi-LAT xml file
 
