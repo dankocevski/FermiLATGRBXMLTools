@@ -7,38 +7,55 @@ This module contains a collection of methods to manipulate the public Fermi-LAT 
 Usage Examples: 
 
 import the module in ipython
+```python
     import FermiLATGRBXMLTools
+```
 
 Read in the xml file
+```python
     xml = FermiLATGRBXMLTools.xml('PublicTableGRBs.xml')
+```
 
 Convert the xml file into a space-delimited text file
+```python
     xml.xml2txt()
+```
 
 Return data for all GRBs in a single dictionary of numpy arrays
+```python
     Data = xml.ExtractData()
+```
 
 List all available data for all Fermi-LAT detected GRBs
+```python
     Data = xml.ExtractData()
     Data.keys()
+```
 
 List the names of all Fermi-LAT detected GRBs
+```python
     Data = xml.ExtractData()
     Data['GRBNAME']
+```
 
 List the best available position of all Fermi-LAT detected GRBs
+```python
     Data = xml.ExtractData()
     RA = Data['RA']
     DEC = Data['DEC']
+```
 
 Return data for all GRBs in a single dictionary of individual GRB objects
+```python
     GRBs = xml.ExtractGRBs()
+```
 
 Extract the location of an individial GRB
+```python
     GRBs = xml.ExtractGRBs()
     GRB = GRBs['130427324']
     print GRB.RA, GRB.DEC
-
+```
 
 Additional Examples:
 
@@ -58,6 +75,7 @@ Plot a histogram of the significance of the LAT detections (TS)
 ```
 
 Plotting the sky distribution of Fermi-LAT detected GRBs
+```python
     import numpy as np                                     
     import matplotlib.pyplot as plt                        
     import FermiLATGRBXMLTools                             
@@ -74,3 +92,4 @@ Plotting the sky distribution of Fermi-LAT detected GRBs
     x=-x                                           
     ax.scatter(np.radians(x),np.radians(Dec))                      
     plt.show()
+```    
