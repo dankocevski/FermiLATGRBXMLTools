@@ -35,9 +35,9 @@ Return data for all GRBs in a single dictionary of individual GRB objects
 >GRBs = xml.ExtractGRBs()
 
 Extract the location of an individial GRB
->GRBs = xml.ExtractGRBs()
->GRB = GRBs['130427324']
->print GRB.RA, GRB.DEC
+>GRBs = xml.ExtractGRBs();
+>GRB = GRBs['130427324'];
+>print GRB.RA, GRB.DEC;
 
 
 Additional Examples:
