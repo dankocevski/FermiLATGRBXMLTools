@@ -1,6 +1,15 @@
 # FermiLATGRBXMLTools
 
-This module contains a collection of methods to manipulate the xml file containing the list of Fermi-LAT detected GRBs.
+This module contains a collection of methods to manipulate the xml file containing the list of Fermi-LAT detected GRBs. The public Fermi-LAT GRB table can be viewed here:
+
+http://fermi.gsfc.nasa.gov/ssc/observations/types/grbs/lat_grbs/
+
+The associated xml file containing data from the table in a machine readable format can be downloaded here:
+
+http://slac.stanford.edu/~glast/LATBA/PublicTableGRBs.xml
+
+The new FermiLATGRBXMLTools python module allows uses to parse and extract information from this xml file.
+
 
 Usage Examples: 
 
